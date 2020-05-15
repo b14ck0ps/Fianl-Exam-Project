@@ -80,11 +80,11 @@ public class Bank implements CustomerOperations,EmployeeOperations
 		{
 			if(customers[i]!=null)
 			{
-				System.out.println("*************************");
+				System.out.println("```````````````````````````````````````");
 				System.out.println("Details of Customer "+(i+1)+":");
 				System.out.println("Name: "+customers[i].getName());
 				System.out.println("NID: "+customers[i].getNid());
-				System.out.println("*************************");	
+				System.out.println("```````````````````````````````````````");	
 			}
 			else
 			{
@@ -169,12 +169,12 @@ public class Bank implements CustomerOperations,EmployeeOperations
 		{
 			if(employees[j]!=null)
 			{
-				System.out.println("**************************************************");
+				System.out.println("````````````````````````````````````````");
 				System.out.println("Details of Employee "+(j+1)+":");
 				System.out.println("Name: "+employees[j].getName());
 				System.out.println("ID: "+employees[j].getEmpId());
 				System.out.println("Salary: "+employees[j].getSalary());
-				System.out.println("**************************************************");	
+				System.out.println("````````````````````````````````````````");	
 			}
 			else
 			{
