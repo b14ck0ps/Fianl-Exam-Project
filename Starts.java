@@ -9,7 +9,7 @@ public class Starts {
         try {
             Bank bank = new Bank();
             Customer existingCustomer = new Customer();
-            System.out.println("~~~~~ Welcome to the Bank ~~~~~");
+            System.out.println("$$$$$$ Welcome to the Bank $$$$$$");
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             int option;
             do {
