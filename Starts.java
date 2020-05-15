@@ -10,7 +10,7 @@ public class Starts {
             Bank bank = new Bank();
             Customer existingCustomer = new Customer();
             System.out.println("$$$$$$ Welcome to the Bank $$$$$$");
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("<================================>");
             int option;
             do {
                 menu();
@@ -178,8 +178,7 @@ public class Starts {
                                 System.out.print("Enter amount of money to transfer:  ");
                                 amount = input.nextDouble();
                                 input.nextLine();
-                                (existingCustomer.getAccount(transferFrom))
-                                        .transfer(existingCustomer.getAccount(transferTo), amount);
+                                (existingCustomer.getAccount(transferFrom)).transfer(existingCustomer.getAccount(transferTo), amount);
                                 break;
                             default:
                                 System.out.println("No such option\nPlease select another option");
@@ -198,7 +197,7 @@ public class Starts {
     }
 
     public static void menu() {
-        System.out.println("```````````MAIN MENU```````````");
+        System.out.println("<=====MAIN MENU=====>");
         System.out.println("1. Employee Management");
         System.out.println("2. Customer Management");
         System.out.println("3. Account Management");
@@ -207,28 +206,28 @@ public class Starts {
     }
 
     public static void emMenu() {
-        System.out.println("```````````EMPLOYEE MENU```````````");
+        System.out.println("<=====EMPLOYEE MENU=====>");
         System.out.println("1. Insert New Employee");
         System.out.println("2. Remove Existing Employee");
         System.out.println("3. Show All Employees");
     }
 
     public static void cusMenu() {
-        System.out.println("```````````CUSTOMER MENU```````````");
+        System.out.println("<=====CUSTOMER MENU=====>");
         System.out.println("1. Insert New Customer");
         System.out.println("2. Remove Existing Customer");
         System.out.println("3. Show All Customer");
     }
 
     public static void acMenu() {
-        System.out.println("```````````Account  Management```````````");
+        System.out.println("<=====Account  Management=====>");
         System.out.println("1. Insert New Account");
         System.out.println("2. Remove Existing Account");
         System.out.println("3. Show All Account");
     }
 
     public static void trnMenu() {
-        System.out.println("```````````Account Transactions```````````");
+        System.out.println("<=====Account Transactions=====>");
         System.out.println("1. Deposit");
         System.out.println("2. Withdraw");
         System.out.println("3. Transfer");

@@ -1,8 +1,6 @@
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.BufferedReader;
 
 public abstract class Account implements ITransactions {
 	private int accountNumber;
@@ -28,8 +26,6 @@ public abstract class Account implements ITransactions {
 
 	File file;
 	private FileWriter writer;
-	private FileReader reader;
-	private BufferedReader buffer;
 
 	public void writeInFile(String s) {
 		try {
@@ -44,34 +40,17 @@ public abstract class Account implements ITransactions {
 		}
 	}
 
-	public void readFromFile() {
-		try {
-			reader = new FileReader(file);
-			buffer = new BufferedReader(reader);
-			String text = "", temp;
-			while ((temp = buffer.readLine()) != null) {
-				text = text + temp + "\r" + "\n";
-			}
-			System.out.print(text);
-			reader.close();
-		} catch (IOException ioe) {
-			ioe.printStackTrace();
-		}
-	}
-
 	public void deposit(double amount) {
-		writeInFile("`````````````````````````````\nBefore deposit\nBalance of account number " + accountNumber + " : " + balance);
+		writeInFile("=============================================================\nBefore deposit\nBalance of account number " + accountNumber + " : " + balance);
 		this.balance = balance + amount;
-		writeInFile(amount + " Deposited successfully\nNew balance of account number " + accountNumber + " : " + balance + "\n`````````````````````````````");
-		readFromFile();
+		writeInFile(amount + " Deposited successfully\nNew balance of account number " + accountNumber + " : " + balance + "\n=============================================================");
 	}
 
 	public void withdraw(double amount) {
 		if (amount <= balance) {
-			writeInFile("`````````````````````````````\nBefore withdraw\nBalance of account number " + accountNumber + " : " + balance);
+			writeInFile("=============================================================\nBefore withdraw\nBalance of account number " + accountNumber + " : " + balance);
 			this.balance = balance - amount;
-			writeInFile(amount + " Withdrawn successfully\nNew balance of account number " + accountNumber + " : " + balance + "\n`````````````````````````````");
-			readFromFile();
+			writeInFile(amount + " Withdrawn successfully\nNew balance of account number " + accountNumber + " : " + balance + "\n=============================================================");
 		} else {
 			System.out.println("Withdraw failed\nThe account " + accountNumber + " has insufficient Balance");
 		}
@@ -79,15 +58,14 @@ public abstract class Account implements ITransactions {
 
 	public void transfer(Account a, double amount) {
 		if (amount <= balance) {
-			writeInFile("`````````````````````````````\nBefore transferring");
+			writeInFile("=============================================================\nBefore transferring");
 			writeInFile("Balance of account number " + accountNumber + " : " + balance);
 			writeInFile("Balance of account number " + a.accountNumber + " : " + a.balance);
 			this.balance = balance - amount;
 			a.balance = a.balance + amount;
 			writeInFile(amount + " Transferred successfully from account number " + accountNumber + " to " + a.accountNumber);
 			writeInFile("New balance of account number " + accountNumber + " : " + balance);
-			writeInFile("New balance of account number " + a.accountNumber + " : " + a.balance + "\n`````````````````````````````");
-			readFromFile();
+			writeInFile("New balance of account number " + a.accountNumber + " : " + a.balance + "\n=============================================================");
 		} else {
 			System.out.println("Transfer failed\nThe account " + accountNumber + " has insufficient money to transfer");
 		}

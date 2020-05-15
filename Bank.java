@@ -1,8 +1,9 @@
 public class Bank implements CustomerOperations,EmployeeOperations
 {
-	private Customer[] customers=new Customer[50];
-	private Employee[] employees=new Employee[50];
+	final static int MAX_PPL = 50;
 	static int i=0,j=0;
+	private Customer[] customers=new Customer[MAX_PPL];
+	private Employee[] employees=new Employee[MAX_PPL];
 
 	public void insertCustomer(Customer c)
 	{

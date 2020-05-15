@@ -99,11 +99,11 @@ public class Customer implements AccountOperations
 		{
 			if(accounts[index]!=null)
 			{
-				System.out.println("``````````````````````````````````````````````````");
+				System.out.println("<=================================>");
 				System.out.println("Details of Account "+(index+1)+":");
 				System.out.println("Account number: "+accounts[index].getAccountNumber());
 				System.out.println("Balance: "+accounts[index].getBalance());
-				System.out.println("```````````````````````````````````````````````````");
+				System.out.println("<=================================>");
 			}
 			else
 			{
